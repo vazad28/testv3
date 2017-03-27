@@ -1,0 +1,43 @@
+$text-image-size: 8rem !default;
+$font-size-large: 7rem;
+$text-image-size-small: 4.0rem !default;
+
+text-img, text-img.small {
+    background-color: #e13348;
+    color: white;
+}
+
+text-img, text-img::after {
+    width: $text-image-size;
+    height: $text-image-size;
+    border-radius: $text-image-size / 2;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: $font-size-large;
+}
+
+text-img.small, text-img.small::after{
+    width: $text-image-size-small;
+    height: $text-image-size-small;
+    border-radius: $text-image-size-small / 2;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: large;
+}
+
+.text-img-wrapper{
+    width: 35%;
+    height: 35%;
+    justify-content: center;
+    display: flex;
+    &.text-img-center{
+        margin: 0 auto;
+    }
+}
+
+
+text-img::after, text-img.small::after {
+    content: attr(value);
+}
